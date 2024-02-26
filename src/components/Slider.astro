@@ -1,0 +1,96 @@
+---
+import JavaScriptIcon from './icons/JavaScript.astro'
+import CSSIcon from './icons/CSS.astro'
+import HTMLIcon from './icons/HTML.astro'
+import AstroIcon from './icons/AstroIcon.astro'
+import SassIcon from './icons/Sass.astro'
+import TailwindIcon from './icons/Tailwind.astro'
+import GitHubIcon from  './icons/GitHub.astro'
+---
+
+<div class="slider">
+    <div class="slider-track">
+        <div class="slide margin">
+            <JavaScriptIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <CSSIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <HTMLIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <AstroIcon class="size=10">
+        </div>
+        <div class="slide margin margin-sass">
+            <SassIcon class="size=10">
+        </div>
+        <div class="slide margin .margin-sass">
+            <TailwindIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <JavaScriptIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <CSSIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <HTMLIcon class="size=10">
+        </div>
+        <div class="slide margin">
+            <AstroIcon class="size=10">
+        </div>
+        <div class="slide margin margin-sass">
+            <SassIcon class="size=10">
+        </div>
+        <div class="slide margin .margin-sass">
+            <TailwindIcon class="size=10">
+        </div>
+    </div>
+    
+</div>
+
+<style>
+    .slider{
+    width: 75%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    background-color: black;
+}
+
+.slider .slider-track{
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;;
+    width: calc(200px * 14);
+}
+
+.slider .slide {
+    width: 200px; 
+}
+
+.slider .slide img{
+    width: 100%;
+}
+
+@keyframes scroll {
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-200px * 6));
+        transform: translateX(calc(-200px * 6));
+    }
+}
+
+.margin{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.margin-sass{
+    margin-right: 60px;
+}
+</style>
