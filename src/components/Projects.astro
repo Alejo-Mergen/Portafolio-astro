@@ -1,0 +1,69 @@
+---
+import JavaScript from './icons/JavaScript.astro'
+import CSS from './icons/CSS.astro'
+import HTML from './icons/HTML.astro'
+import GitHubIcon from './icons/GitHub.astro'
+import PreviewIcon from './icons/Preview.astro'
+
+const TAGS = {
+    JS: {
+        name: 'JavaScript',
+        class: "bg-yellow-500 text-white",
+        icon: JavaScript,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-blue-500 text-white",
+        icon: CSS,
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-orange-400 text-white" ,
+        icon: HTML,
+    }
+
+    
+}
+
+const PROJECTS = [
+    {
+        title: 'Blog de cafe',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam euismod, aliquam',
+        link: "#https://blog-de-cafe-rjv1lm0p3-alejos-projects-c451c103.vercel.app/",
+        github: 'https://github.com/Alejo-Mergen/Blog-de-Cafe',
+        image: 'public/projects/927shots_so.webp',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JS]
+    }
+]
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags}) => (
+       <article>
+         <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+         <p class="text-lg mb-4 text-pretty">{description}</p>
+         <ul class="flex gap-x-2 flex-row">
+            {tags.map((tag) => (
+                <li>
+                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-3`}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                    </span>
+                </li>
+            ))}
+         </ul>
+         <img
+            class="rounded shadow-2xl shadow-white/10"
+            src={image} alt={'Captura de pantalla del proyecto'}>
+            <a class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black mt-3 mr-3" href=#>
+                <GitHubIcon class="size-4 md:size-6"/>
+                    GitHub
+                </a>      
+            <a class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black mt-3" href=#>
+                <PreviewIcon class="size-4 md:size-6"/>
+                    Preview
+                </a>
+            
+        </article>   
+    ))
+}

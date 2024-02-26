@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/Linkedin.astro'
+import GitHubIcon from '../components/icons/GitHub.astro'
+import EmailIcon from '../components/icons/Email.astro'
+import CodeIcon from '../components/icons/Code.astro'
+import Projects from '../components/Projects.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+---	
+
+<Layout title="Portafolio de alejo.">
+	<main>
+		<SectionContainer>
+			<img
+				class="rounded-full size-12 mb-4"
+				src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.uf5cEYrn_iZPsxsoqjKmBwHaHb%26pid%3DApi&f=1&ipt=b1cb4ce4f1b6eaba38dd30b3aaed9434e16dccec79c78c315955277aeff546b3&ipo=images"
+				alt="alejo imagen"
+			/>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+				Hey, soy Alejo <a 
+				href="#" 
+				target="_blank"
+				rel="noopener"
+				class="flex justify-center items-center"
+				>
+				<Badge>Disponible para Trabajar</Badge>
+			  </a>
+			</h1>
+			<h2 class="text-xl opacity-80">
+				+1 año de experiencia como <span class="text-yellow-200/90">Desarrollador web</span> Freelance y Diseñador. 
+				<span class="text-blue-300/90">De Buenos Aires, Argentina 🇦🇷</span>. Especializado en Frontend
+			</h2>
+			<nav class="flex gap-x-2 mt-8">
+				<a class="rounded-full border border-white/10 flex justify-center items-center
+				gap-x-2 py-4 px-4 bg-white/5 hover:scale-110 hover:bg-white/10 transition" href="#">
+					<LinkedInIcon class="w-6 h-6" />
+					LinkedIn
+				</a>
+				<a class="rounded-full border border-white/10 flex justify-center items-center
+				gap-x-2 py-2 px-5 bg-white/5 hover:scale-110 hover:bg-white/10 transition ml-3" href="#">
+					<GitHubIcon class="w-6 h-6" />
+					GitHub
+				</a>
+				<a class="rounded-full border border-white/10 flex justify-center items-center
+				gap-x-2 py-2 px-5 bg-white/5 hover:scale-110 hover:bg-white/10 transition ml-3" href="mailto:alejomergen47@gmail.com">
+					<EmailIcon class="w-6 h-6" />
+					alejomergen47@gmail.com
+				</a>
+		   </nav>
+		</SectionContainer>
+	    <SectionContainer> 
+		   	<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center mt-20">
+				<CodeIcon class="sixe-7"/>
+				Proyectos 1
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>
